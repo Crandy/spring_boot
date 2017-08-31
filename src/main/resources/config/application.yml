@@ -19,3 +19,17 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+
+#--------------------------------------------
+#     Redis Config
+#--------------------------------------------
+  redis:
+      host: 127.0.0.1
+      port: 6379
+      password:
+      database: 9
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+        max-wait: -1
