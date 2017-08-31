@@ -1,9 +1,11 @@
 package com.zy.study.springboot.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.ZonedDateTime;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,8 +23,9 @@ public class User {
     private String name;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @Column(name = "zoned_date_time")
-    private ZonedDateTime zonedDateTime;
+    private Date zonedDateTime;
 
     @ManyToOne
     @JoinColumn(name = "department_id")
@@ -46,11 +49,11 @@ public class User {
         this.name = name;
     }
 
-    public ZonedDateTime getZonedDateTime() {
+    public Date getZonedDateTime() {
         return zonedDateTime;
     }
 
-    public void setZonedDateTime(ZonedDateTime zonedDateTime) {
+    public void setZonedDateTime(Date zonedDateTime) {
         this.zonedDateTime = zonedDateTime;
     }
 
